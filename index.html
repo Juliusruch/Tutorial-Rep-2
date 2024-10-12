@@ -1,11 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test portfolio</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="layout.css"/>
+    <link rel="stylesheet" href="BlackJackStyle.css">
+ </head>
+ <body>
+    <header id="header" class="font-forest flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-3 sm:py-0 border-b-[1px] border-solid border-gray-600">
+       <nav class="relative max-w-screen-2xl w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8" aria-label="Global">
+          <div class="flex items-center justify-between flex-grow-1">
+             <a class="flex text-xl gap-2 items-center justify-center font-semibold text-black" aria-label="Brand" href="/">
+                <img src="https://yralcgckodgemrozhvhn.supabase.co/storage/v1/object/public/websites-data/logo/bfOwUwSUWV3xEzxI" alt="" class="w-[40px] rounded-lg flex-1"/>
+                <p class="text-[16px] md:text-[20px]">Blackjack-lernen.de</p>
+             </a>
+             <div class="sm:hidden">
+                <button type="button" class="hs-collapse-toggle size-9 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border 
+                   border-green-500
+                   text-green-500
+                   hover:border-green-500
+                   disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
+                   <svg class="hs-collapse-open:hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="3" x2="21" y1="6" y2="6"></line>
+                      <line x1="3" x2="21" y1="12" y2="12"></line>
+                      <line x1="3" x2="21" y1="18" y2="18"></line>
+                   </svg>
+                   <svg class="hs-collapse-open:block hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 6 6 18"></path>
+                      <path d="m6 6 12 12"></path>
+                   </svg>
+                </button>
+             </div>
+          </div>
+          <div id="navbar-collapse-with-animation" class="hs-collapse hidden overflow-hidden transition-all duration-300 sm:block">
+             <div class="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7"><a class="font-medium text-black hover:text-green-500 sm:py-6" href="/">Home</a><a class="font-medium text-black hover:text-green-500 sm:py-6" href="/page-zjkp">Jetzt spielen</a></div>
+          </div>
+       </nav>
+    </header>
+
     
-</body>
-</html>
+
+    <div id="game">
+       <div id="dealer-area">
+           <h2>Dealer</h2>
+           <div id="dealer-cards" class="cards"></div>
+           <p id="dealer-score">Score: 0</p>
+       </div>
+       <div id="player-area">
+           <h2>Player</h2>
+           <div id="player-hands">
+           </div>
+           <p id="player-score"></p>
+       </div>
+       <div id="money">
+           <div id="balance-sheet">
+               Balance: 1000$
+           </div>
+           <button id="half-bet">1/2x</button>
+           <input type="text" id="bet-input" value="100">
+           <button id="double-bet">2.0x</button>
+
+       </div>
+       <div id="controls">
+           <button id="hit-button">Hit</button>
+           <button id="deal-button">Deal</button>
+           <button id="stand-button">Stand</button>
+           <div>
+               <button id="double-button">Double</button>
+               <button id="split-button">Split</button>
+           </div>
+       </div>
+       <p id="result-message"></p>
+   </div>
+   <script src="BlackJack.js"></script>
+
+
+    <div id="footer" class="bg-white font-forest pt-4 sm:pt-10 lg:pt-12 border-t-[1px] border-solid border-gray-600">
+       <footer class="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <div class="mb-16 flex flex-col md:flex-row md:gap-12 gap-4 border-t pt-10 lg:gap-8 lg:pt-12">
+             <div class="col-span-full lg:col-span-2">
+                <div class="mb-4 lg:-mt-2">
+                   <a class="text-black inline-flex items-center gap-2 text-xl font-bold md:text-2xl" aria-label="logo" href="/">
+                      <img src="https://yralcgckodgemrozhvhn.supabase.co/storage/v1/object/public/websites-data/logo/bfOwUwSUWV3xEzxI" alt="" class="w-[40px] rounded-lg flex-1"/>
+                      <p class="max-w-[700px]">Blackjack-lernen.de</p>
+                   </a>
+                </div>
+                <p class="text-gray-500 max-w-[500px] mb-6 sm:pr-8">Lernen Sie, wie man Blackjack spielt und meistert, mit umfassenden Anleitungen, Strategien und Übungshilfen.</p>
+             </div>
+             <div>
+                <div class="text-gray-500 mb-4 font-bold tracking-widest">Navigation</div>
+                <nav class="flex flex-col gap-4">
+                   <div><a class="text-gray-500 hover:text-green-500 active:text-green-600 transition duration-100" href="/">Home</a></div>
+                   <div><a class="text-gray-500 hover:text-green-500 active:text-green-600 transition duration-100" href="/page-zjkp">Jetzt spielen</a></div>
+                </nav>
+             </div>
+             <div>
+                <div class="text-gray-500 mb-4 font-bold tracking-widest">Socials</div>
+                <nav class="flex flex-col gap-4">
+                   <div><a class="text-gray-500 hover:text-green-500 active:text-green-600 transition duration-100" href="https://www.facebook.com/">Facebook</a></div>
+                   <div><a class="text-gray-500 hover:text-green-500 active:text-green-600 transition duration-100" href="https://www.instagram.com/">Instagram</a></div>
+                   <div><a class="text-gray-500 hover:text-green-500 active:text-green-600 transition duration-100" href="https://www.youtube.com/">Youtube</a></div>
+                </nav>
+             </div>
+          </div>
+          <div class="text-gray-500 border-t py-8 text-center text-sm">Blackjack-lernen.de © 2024</div>
+       </footer>
+    </div>
+ </body>
